@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Program {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         SellerDao sellerDao = DaoFactory.createSellerDao(); //Injeçao de independencia
 
@@ -21,7 +21,14 @@ public class Program {
         Department department = new Department(2, null);
         List<Seller> list = sellerDao.findByDepartment(department);
 
-        for(Seller x : list){
+        for (Seller x : list) {
+            System.out.println(x);
+        }
+
+        System.out.println("\n==== TEST 3: seller findAll ====");
+        list = sellerDao.findAll();
+
+        for (Seller x : list) {
             System.out.println(x);
         }
     }
